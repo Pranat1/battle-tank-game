@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController :  MonoSingleton<PlayerController>
+public class PlayerController :  MonoSingletonGeneric<PlayerController>
 {
     public Joystick joystick;
     public float runSpeed = 40f;
