@@ -63,7 +63,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7292563918729168376}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3936555476422358791
+--- !u!114 &4833359944112378782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,5 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf6b89450d55406896e0a0ba7978835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
+  joystick: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
   runSpeed: 40

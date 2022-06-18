@@ -7,7 +7,7 @@ public class MonoSingletonGeneric<T> : MonoBehaviour where T: MonoSingletonGener
     private static T instance;
     public static T Instance {get { return instance; }}
 
-/*     private void Awake() {
+/*      private void Awake() {
         if (instance == null){
             instance = (T)this;
         }
@@ -15,5 +15,5 @@ public class MonoSingletonGeneric<T> : MonoBehaviour where T: MonoSingletonGener
         {
             Destroy(this);
         }
-    } */
+    }  */
 }
