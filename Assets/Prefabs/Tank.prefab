@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00b3066357a7423492eae680c673642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankView: {fileID: 0}
+  tankView: {fileID: 1888134274113919150, guid: e8178c8ce6c854ae19fa857d863168de,
+    type: 3}

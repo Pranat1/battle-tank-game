@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.873978
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.026168415
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.490257
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63,7 +63,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7292563918729168376}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4833359944112378782
+--- !u!114 &1888134274113919150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,9 +72,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7292563918729200360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf6b89450d55406896e0a0ba7978835, type: 3}
+  m_Script: {fileID: 11500000, guid: c78b4d88639d447e6b37c53bc363f4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+  tankService: {fileID: 8604586097751975778, guid: 11cb8fe24d205497d9612d2bbd09614c,
     type: 3}
-  runSpeed: 40

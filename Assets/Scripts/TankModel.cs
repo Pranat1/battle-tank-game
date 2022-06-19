@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class TankModel 
 {
-    public TankModel(int speed){
-        Speed = speed;
+    public float runSpeed = 40f;
+    float horizontalMove = 0f;
+    float virtileMove = 0f;
+    TankType TankType1;
+    public TankModel(TankType tankType, float speed){
+        TankType1 = tankType;
+        runSpeed = speed;
     }
 
-    public int Speed { get; }
+    public float RunSpeed { get; }
 }
