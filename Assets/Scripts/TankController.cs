@@ -8,6 +8,7 @@ public class TankController
     public TankController(TankModel tankModel, TankView tankPrefab){
         TankModel = tankModel;
         tankView = GameObject.Instantiate<TankView>(tankPrefab);
+        tankView.speed = tankModel.runSpeed;
     }
 
     public TankModel TankModel { get;}

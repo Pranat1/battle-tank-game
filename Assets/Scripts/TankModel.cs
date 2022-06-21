@@ -7,11 +7,17 @@ public class TankModel
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     float virtileMove = 0f;
-    TankType TankType1;
-    public TankModel(TankType tankType, float speed){
-        TankType1 = tankType;
-        runSpeed = speed;
+    TankType tankType1;
+    float health;
+    float damage;
+    public TankModel(TankScriptableObject tankScriptableObject){
+        tankType1 = tankScriptableObject.TankType;
+        runSpeed = tankScriptableObject.Speed;
+        health = tankScriptableObject.Health;
+        damage = tankScriptableObject.Damage;
     }
 
     public float RunSpeed { get; }
+    public float Health { get; }
+    public TankType TankType1 { get; }
 }
