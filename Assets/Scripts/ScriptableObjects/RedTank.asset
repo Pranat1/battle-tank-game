@@ -16,4 +16,4 @@ MonoBehaviour:
   TankName: RedTank
   Speed: 0.1
   Health: 100
-  Damage: 0
+  Damage: 30

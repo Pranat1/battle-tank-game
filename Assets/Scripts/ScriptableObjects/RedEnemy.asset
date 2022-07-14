@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5218cc4b73e8406ea14799a16aab7e0, type: 3}
-  m_Name: GreenTank
+  m_Script: {fileID: 11500000, guid: 728cc96d780e648fb9bf9538061dbdd7, type: 3}
+  m_Name: RedEnemy
   m_EditorClassIdentifier: 
-  TankType: 2
-  TankName: GreenDefaultTank
-  Speed: 0.1
+  EnemyType: 1
+  EnemyName: EmemyRed
+  Speed: 0.2
   Health: 100
-  Damage: 20
+  Damage: 10
