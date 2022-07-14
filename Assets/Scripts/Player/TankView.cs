@@ -24,7 +24,7 @@ public class TankView : MonoBehaviour
         {
             tankService.tankController.shoot(transform.rotation, transform.position);
         }
-        tankService.agent.SetDestination(new Vector3(transform.position.x+tankService.joystick.Horizontal*speed, 0, transform.position.y + tankService.joystick.Vertical*speed));
+        //tankService.agent.SetDestination(new Vector3(transform.position.x+tankService.joystick.Horizontal*speed, 0, transform.position.y + tankService.joystick.Vertical*speed));
         gameObject.transform.position += new Vector3(tankService.joystick.Horizontal*speed, 0, tankService.joystick.Vertical*speed);
         //Vector3 moveVector = (Vector3.right*tankService.joystick.Horizontal + Vector3.forward*tankService.joystick.Vertical);
         

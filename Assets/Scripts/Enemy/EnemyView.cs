@@ -16,7 +16,7 @@ public class EnemyView : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         
-        if(other.gameObject.GetComponent<petrolCollider>().colliderType == colliderName){
+        if(other.gameObject.GetComponent<petrolCollider>()){
             speed = -speed;
             }
     }
