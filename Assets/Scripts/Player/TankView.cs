@@ -9,10 +9,7 @@ public class TankView : MonoBehaviour
     TankService tankService;
     public TankType tankType;
     public float damage;
-
-    TankView(){
-         
-    }
+    public float currentHealth;
 
     private void Start()
     {   
@@ -20,15 +17,15 @@ public class TankView : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if(currentHealth < 0){
+            Destroy(gameObject);
+        }
+        else if (Input.GetKeyDown("space"))
         {
             tankService.tankController.shoot(transform.rotation, transform.position);
         }
-        //tankService.agent.SetDestination(new Vector3(transform.position.x+tankService.joystick.Horizontal*speed, 0, transform.position.y + tankService.joystick.Vertical*speed));
-        gameObject.transform.position += new Vector3(tankService.joystick.Horizontal*speed, 0, tankService.joystick.Vertical*speed);
-        //Vector3 moveVector = (Vector3.right*tankService.joystick.Horizontal + Vector3.forward*tankService.joystick.Vertical);
-        
-        if(tankService.joystick.Horizontal != 0 || tankService.joystick.Vertical != 0){
+        else if(tankService.joystick.Horizontal != 0 || tankService.joystick.Vertical != 0){
+            gameObject.transform.position += new Vector3(tankService.joystick.Horizontal*speed, 0, tankService.joystick.Vertical*speed);
             if(tankService.joystick.Horizontal < 0 && tankService.joystick.Vertical < 0){
                 transform.rotation = Quaternion.Euler(0f, -(180f+Mathf.Atan(tankService.joystick.Vertical/tankService.joystick.Horizontal)*180f/Mathf.PI)+90f, 0f);
             }

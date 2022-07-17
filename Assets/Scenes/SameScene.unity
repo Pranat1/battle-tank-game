@@ -331,6 +331,8 @@ MonoBehaviour:
   enemyList: {fileID: 11400000, guid: aec55da2a6aae47a7903e7196780786f, type: 2}
   enemyView: {fileID: 3395392635759255083, guid: cfde9701fc59d42958014a24ba2bc52d,
     type: 3}
+  player: {fileID: 0}
+  bulletService: {fileID: 1549678640}
 --- !u!4 &1033922779
 Transform:
   m_ObjectHideFlags: 0
@@ -999,6 +1001,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTank
       objectReference: {fileID: 0}
+    - target: {fileID: 3395392635759255083, guid: cfde9701fc59d42958014a24ba2bc52d,
+        type: 3}
+      propertyPath: enemyService
+      value: 
+      objectReference: {fileID: 1033922778}
     m_RemovedComponents:
     - {fileID: -3042796971582661207, guid: cfde9701fc59d42958014a24ba2bc52d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cfde9701fc59d42958014a24ba2bc52d, type: 3}

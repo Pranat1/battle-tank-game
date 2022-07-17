@@ -22,8 +22,11 @@ public class BulletView : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         
-        if(other.gameObject.GetComponent<EnemyView>()){
+        if(other.gameObject.GetComponent<EnemyView>() && bulletType != BulletType.Enemy){
             other.gameObject.GetComponent<EnemyView>().currentHealth -= damage;
+            }
+        else if(other.gameObject.GetComponent<TankView>() && ((bulletType != BulletType.Red) || (bulletType != BulletType.Blue))){
+            other.gameObject.GetComponent<TankView>().currentHealth -= damage;
             }
     }
 }

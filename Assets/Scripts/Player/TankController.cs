@@ -14,6 +14,8 @@ public class TankController
         tankView.speed = tankModel.runSpeed;
         tankView.tankType = tankModel.tankType1;
         tankView.damage = tankModel.damage;
+        tankView.currentHealth = tankModel.health;
+        tankService.tankView = tankView;
     }
 
     public TankModel TankModel { get;}

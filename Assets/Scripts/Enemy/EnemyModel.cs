@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyModal
+public class EnemyModel
 {
     public float runSpeed = 40f;
     public float health = 40;
     EnemyType enemyType1;
-    float damage;
-    public EnemyModal(EnemyScriptableObject enemyScriptableObject){
+    public float damage;
+    public EnemyModel(EnemyScriptableObject enemyScriptableObject){
         enemyType1 = enemyScriptableObject.EnemyType;
         runSpeed = enemyScriptableObject.Speed;
         health = enemyScriptableObject.Health;

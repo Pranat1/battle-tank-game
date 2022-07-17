@@ -8,7 +8,7 @@ public class TankModel
     float horizontalMove = 0f;
     float virtileMove = 0f;
     public TankType tankType1;
-    float health;
+    public float health;
     public float damage;
     public TankModel(TankScriptableObject tankScriptableObject){
         tankType1 = tankScriptableObject.TankType;
