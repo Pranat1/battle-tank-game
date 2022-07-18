@@ -26,6 +26,9 @@ public class EnemyView : MonoBehaviour
         if(currentHealth < 0f){
             Destroy(gameObject);
         }
+        else if(playerObject == null){
+            StartCoroutine(DestroyEnemy(2f));
+        }
         else if(playerObject != null){
             if((gameObject.transform.position - playerObject.transform.position).sqrMagnitude < 100){
                 timeVar += Time.deltaTime;
@@ -39,6 +42,7 @@ public class EnemyView : MonoBehaviour
         else{
              gameObject.transform.position += new Vector3(0,0,speed*.1f);
         }
+
     }
     private void OnTriggerEnter(Collider other) {
         
@@ -49,11 +53,10 @@ public class EnemyView : MonoBehaviour
     private void SetDestinationToMousePosition(){
         myNavMeshAgent.SetDestination(playerObject.transform.position);
     }
-    IEnumerator WaitTime(float seconds)
+    IEnumerator DestroyEnemy(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        enemyService.enemyController.shoot(transform.rotation, transform.position);
-        Debug.Log(1);
+        Destroy(gameObject);
 
     }
 }
