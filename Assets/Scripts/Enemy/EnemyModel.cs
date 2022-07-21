@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyModel
 {
     public float runSpeed = 40f;
-    public float health = 40;
+    public float health = 40f;
+    public float currentHealth = 40f;
     EnemyType enemyType1;
     public float damage;
     public EnemyModel(EnemyScriptableObject enemyScriptableObject){

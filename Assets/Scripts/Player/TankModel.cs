@@ -10,7 +10,9 @@ public class TankModel
     public TankType tankType1;
     public float health;
     public float damage;
+    public float currentHealth;
     public TankModel(TankScriptableObject tankScriptableObject){
+        currentHealth = tankScriptableObject.Health;
         tankType1 = tankScriptableObject.TankType;
         runSpeed = tankScriptableObject.Speed;
         health = tankScriptableObject.Health;

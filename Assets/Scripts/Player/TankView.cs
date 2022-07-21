@@ -10,36 +10,28 @@ public class TankView : MonoBehaviour
     public TankType tankType;
     public float damage;
     public float currentHealth;
+    public bool getKeyDownSpace;
+    public TankController controller;
 
     private void Start()
     {   
         tankService = (TankService) FindObjectOfType<TankService>();
     }
+    
+    public void destroy(){
+        Destroy(gameObject);
+    }
     private void Update()
     {
-        if(currentHealth < 0){
-            Destroy(gameObject);
-        }
-        else if (Input.GetKeyDown("space"))
+
+        if (Input.GetKeyDown("space"))
         {
-            tankService.tankController.shoot(transform.rotation, transform.position);
+            getKeyDownSpace = true;
         }
-        else if(tankService.joystick.Horizontal != 0 || tankService.joystick.Vertical != 0){
-            gameObject.transform.position += new Vector3(tankService.joystick.Horizontal*speed, 0, tankService.joystick.Vertical*speed);
-            if(tankService.joystick.Horizontal < 0 && tankService.joystick.Vertical < 0){
-                transform.rotation = Quaternion.Euler(0f, -(180f+Mathf.Atan(tankService.joystick.Vertical/tankService.joystick.Horizontal)*180f/Mathf.PI)+90f, 0f);
-            }
-            else if(tankService.joystick.Horizontal > 0 && tankService.joystick.Vertical < 0){
-                transform.rotation = Quaternion.Euler(0f, -Mathf.Atan(tankService.joystick.Vertical/tankService.joystick.Horizontal)*180f/Mathf.PI+90f, 0f);
-            }
-            else if(tankService.joystick.Horizontal > 0 && tankService.joystick.Vertical > 0){
-                transform.rotation = Quaternion.Euler(0f,-Mathf.Atan(tankService.joystick.Vertical/tankService.joystick.Horizontal)*180f/Mathf.PI+90f, 0f);
-            }
-            else if(tankService.joystick.Horizontal < 0 && tankService.joystick.Vertical > 0){
-                transform.rotation = Quaternion.Euler(0f, -(180f + Mathf.Atan(tankService.joystick.Vertical/tankService.joystick.Horizontal)*180f/Mathf.PI)+90f, 0f);
-            }
-            
+        else{
+            getKeyDownSpace = false;
         }
+        controller.enemyStates();
         
         /* gameObject.transform.rotation =  Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y - Vector3.Angle(gameObject.transform.forward, new Vector3(tankService.joystick.Horizontal, 0, tankService.joystick.Vertical*speed)), gameObject.transform.rotation.z); */
         

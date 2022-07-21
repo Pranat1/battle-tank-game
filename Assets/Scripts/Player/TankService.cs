@@ -22,11 +22,7 @@ public class TankService : MonoSingletonGeneric<TankService>
         tankController = tank;
         return tank;
     }
-    public void createBullet(){
-        bulletService.CreateNewBullet(Random.Range(0,2), model.damage);
-    }
-    public void setBulletSpeed(Quaternion direction, Vector3 tPosition){
-        bulletService.direction = direction;
-        bulletService.tankPosition = tPosition;
+    public void createBullet(Quaternion direction, Vector3 tPosition){
+        bulletService.CreateNewBullet(Random.Range(0,2), model.damage, tPosition, direction);
     }
 }

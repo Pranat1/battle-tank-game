@@ -27,11 +27,7 @@ public class EnemyService : MonoSingletonGeneric<EnemyService>
         player = (TankService) FindObjectOfType<TankService>();
         //enemyView.playerObject = player.tankView;
     }
-    public void createBullet(){
-        bulletService.CreateNewBullet(2, model.damage);
-    }
-    public void setBulletSpeed(Quaternion direction, Vector3 tPosition){
-        bulletService.direction = direction;
-        bulletService.tankPosition = tPosition;
+    public void createBullet(Quaternion direction,Vector3 tPosition){
+        bulletService.CreateNewBullet(2, model.damage, tPosition, direction);
     }
 }

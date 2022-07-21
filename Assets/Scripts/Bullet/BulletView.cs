@@ -17,13 +17,12 @@ public class BulletView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation =  bulletService.direction;
         transform.position += transform.forward*.1f;
     }
     private void OnTriggerEnter(Collider other) {
         
         if(other.gameObject.GetComponent<EnemyView>() && bulletType != BulletType.Enemy){
-            other.gameObject.GetComponent<EnemyView>().currentHealth -= damage;
+            other.gameObject.GetComponent<EnemyView>().enemyModel.currentHealth -= damage;
             }
         else if(other.gameObject.GetComponent<TankView>() && ((bulletType != BulletType.Red) || (bulletType != BulletType.Blue))){
             other.gameObject.GetComponent<TankView>().currentHealth -= damage;

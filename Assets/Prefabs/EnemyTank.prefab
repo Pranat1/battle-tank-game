@@ -217,6 +217,8 @@ GameObject:
   - component: {fileID: 9090166776565249140}
   - component: {fileID: -2404814111352585262}
   - component: {fileID: 1281996343806411181}
+  - component: {fileID: 3352331445109976670}
+  - component: {fileID: 2225342987881270043}
   m_Layer: 0
   m_Name: EnemyTank
   m_TagString: Untagged
@@ -252,12 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffb077ea3c5c428ea621b224b759f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
   colliderName: 1
-  currentHealth: 0
   playerObject: {fileID: 7292563918729200360, guid: e8178c8ce6c854ae19fa857d863168de,
     type: 3}
   myNavMeshAgent: {fileID: 1281996343806411181}
+  enemyService: {fileID: 0}
+  tankPetroling: {fileID: 2225342987881270043}
+  tankChase: {fileID: 3352331445109976670}
+  currentState: {fileID: 3352331445109976670}
 --- !u!65 &9090166776565249140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -309,6 +313,31 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3352331445109976670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818731170806168827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d357bd177264426b1d7fe1edaa43fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2225342987881270043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818731170806168827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd04da39505a4df18aa8b163ee33eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankView: {fileID: 0}
 --- !u!1 &1818731170806168829
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,50 +4,39 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
+
 public class EnemyView : MonoBehaviour
 {
-    public float speed;
+    public float timeVar;
+    public EnemyModel enemyModel;
+    public EnemyController cuntroller;
     public ColliderType colliderName = ColliderType.PetrolCollider;
-    public float currentHealth;
     public GameObject playerObject;
     public NavMeshAgent myNavMeshAgent;
     public EnemyService enemyService;
-    float timeVar = 0f;
+    public TankPetroling tankPetroling;
+    [SerializeField]
+    public TankChase tankChase;
+    [SerializeField]
+    public TankState currentState;
+    
 
     void Start(){
+        timeVar = 0f;
+        SetState(tankPetroling);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         playerObject = GameObject.FindGameObjectWithTag("Player");
-        enemyService = (EnemyService) FindObjectOfType<EnemyService>();
-        if(currentHealth < 0f){
-            Destroy(gameObject);
-        }
-        else if(playerObject == null){
-            StartCoroutine(DestroyEnemy(2f));
-        }
-        else if(playerObject != null){
-            if((gameObject.transform.position - playerObject.transform.position).sqrMagnitude < 100){
-                timeVar += Time.deltaTime;
-                if(timeVar > 2f){
-                    timeVar -= 2f;
-                    enemyService.enemyController.shoot(transform.rotation, transform.position);
-                }
-                myNavMeshAgent.SetDestination(playerObject.transform.position);
-            }
-        }
-        else{
-             gameObject.transform.position += new Vector3(0,0,speed*.1f);
-        }
+        cuntroller.enemyStates(playerObject);
 
     }
     private void OnTriggerEnter(Collider other) {
         
         if(other.gameObject.GetComponent<petrolCollider>()){
-            speed = -speed;
+            enemyModel.runSpeed = -enemyModel.runSpeed;
             }
     }
     private void SetDestinationToMousePosition(){
@@ -58,5 +47,18 @@ public class EnemyView : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         Destroy(gameObject);
 
+    }
+    public void destroy(){
+        Destroy(gameObject);
+    }
+    public void startDestroyCoroutine(){
+        StartCoroutine(DestroyEnemy(2f));
+    }
+    public void SetState(TankState tankState){
+        if(currentState != null){
+            currentState.OnExitState();
+        }
+        currentState = tankState;
+        currentState.OnEnterState();
     }
 }

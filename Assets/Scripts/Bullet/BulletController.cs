@@ -5,14 +5,14 @@ using UnityEngine;
 public class BulletController
 {
     BulletView bulletView;
-    BulletModal bulletModal;
+    BulletModel bulletModel;
     BulletService bulletService;
-    public BulletController(BulletModal bulletModal, BulletView bulletPrefab, float damage){
+    public BulletController(BulletModel bulletModel, BulletView bulletPrefab, float damage, Vector3 tankPosition, Quaternion rotation){
         bulletService = GameObject.FindObjectOfType<BulletService>();
-        this.bulletModal = bulletModal;
-        bulletView = GameObject.Instantiate<BulletView>(bulletPrefab, bulletService.tankPosition, Quaternion.identity);
-        bulletView.speed = bulletModal.runSpeed;
-        bulletView.bulletType = bulletModal.bulletType1;
+        this.bulletModel = bulletModel;
+        bulletView = GameObject.Instantiate<BulletView>(bulletPrefab, tankPosition, rotation);
+        bulletView.speed = bulletModel.runSpeed;
+        bulletView.bulletType = bulletModel.bulletType1;
         bulletView.damage = damage;
         Debug.Log(damage);
     }
