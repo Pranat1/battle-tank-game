@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class TankService : MonoSingletonGeneric<TankService>
 {
@@ -13,7 +14,7 @@ public class TankService : MonoSingletonGeneric<TankService>
     public BulletService bulletService;
     public TankController tankController;
     private void Start(){
-        CreateNewTank(Random.Range(0,2));
+        CreateNewTank(UnityEngine.Random.Range(0,2));
     }
     public TankController CreateNewTank(int index){
         TankScriptableObject tankScriptableObject = tankList.tanks[index];
@@ -23,6 +24,7 @@ public class TankService : MonoSingletonGeneric<TankService>
         return tank;
     }
     public void createBullet(Quaternion direction, Vector3 tPosition){
-        bulletService.CreateNewBullet(Random.Range(0,2), model.damage, tPosition, direction);
+        bulletService.CreateNewBullet(UnityEngine.Random.Range(0,2), model.damage, tPosition, direction);
+        
     }
 }

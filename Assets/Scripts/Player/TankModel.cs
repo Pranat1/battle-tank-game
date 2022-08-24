@@ -5,7 +5,6 @@ using UnityEngine;
 public class TankModel 
 {
     public float runSpeed = 40f;
-    float horizontalMove = 0f;
     float virtileMove = 0f;
     public TankType tankType1;
     public float health;

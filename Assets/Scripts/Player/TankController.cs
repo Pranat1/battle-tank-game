@@ -19,6 +19,8 @@ public class TankController
  
     public void shoot(Quaternion tForword, Vector3 tPosition){
         tankService.createBullet(tForword, tPosition);
+        ServiceEvents.Instance.InvokeFire();
+
     }
     public void enemyStates(){
         if(tankModel.currentHealth < 0){
