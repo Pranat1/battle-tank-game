@@ -8,6 +8,8 @@ public class TankChase : TankState
     public TankView tankView;
     private void Awake(){
         enemyView = GetComponent<EnemyView>();
+    }
+    private void Start(){
         tankView = GameObject.FindGameObjectWithTag("Player").GetComponent<TankView>();
     }
     public override void OnEnterState()
@@ -18,8 +20,9 @@ public class TankChase : TankState
             enemyView.timeVar -= 2f;
             enemyView.cuntroller.shoot(enemyView.gameObject.transform.rotation, enemyView.gameObject.transform.position);
         }
-        Debug.Log(tankView.transform.position);
+        if(tankView != null){
         enemyView.myNavMeshAgent.SetDestination(tankView.transform.position);
+        }
 
     }
     public override void OnExitState()
