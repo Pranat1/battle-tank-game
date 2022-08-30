@@ -16,4 +16,4 @@ MonoBehaviour:
   TankName: GreenDefaultTank
   Speed: 0.1
   Health: 100
-  Damage: 0
+  Damage: 20

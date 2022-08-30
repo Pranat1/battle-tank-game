@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TankType: 1
   TankName: RedTank
-  Speed: 0.1
+  Speed: 0.2
   Health: 100
-  Damage: 0
+  Damage: 30
